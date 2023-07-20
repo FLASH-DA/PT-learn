@@ -1,16 +1,16 @@
 package com.bjpowernode.micrweb.front.controller;
-import com.bjpowernode.service.platBaseInfoService;
+
+import com.bjpowernode.service.PlatBaseInfoService;
 import org.apache.dubbo.config.annotation.DubboReference;
 
 /**
- * @author csd
- * @version 1.0
+ * Package:com.bjpowernode.front.controller
+ * Date:2022/3/1 16:28
  */
-@SuppressWarnings({"all"})
 public class BaseController {
-    @DubboReference(interfaceClass = com.bjpowernode.service.platBaseInfoService.class,version = "1.0")
-    protected platBaseInfoService platBaseInfoService;
 
+    //声明公共的方法，属性的等
 
-
+    @DubboReference(interfaceClass = PlatBaseInfoService.class,version = "1.0")
+    protected PlatBaseInfoService platBaseInfoService;
 }

@@ -4,11 +4,8 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-  redis:
-    host: localhost
-    port: 6379
 
-#???
+#端口号
 server:
   port: 8000
   servlet:
@@ -18,15 +15,14 @@ server:
       charset: utf-8
       force: true
 
-#dubbo??
+#dubbo配置
 dubbo:
   registry:
     address: zookeeper://localhost:2181
   scan:
-    base-packages: com.bjpowernode.micrweb.front
+    base-packages: com.bjpowernode.front
   consumer:
     check: false
     timeout: 50000
     retries: 0
-
 

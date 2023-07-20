@@ -5,7 +5,7 @@ import com.bjpowernode.micrdataservice.mapper.LoanInfoMapper;
 import com.bjpowernode.micrdataservice.mapper.UserMapper;
 import com.bjpowernode.pojo.BaseInfo;
 import org.apache.dubbo.config.annotation.DubboService;
-import com.bjpowernode.service.platBaseInfoService;
+import com.bjpowernode.service.PlatBaseInfoService;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -15,8 +15,8 @@ import java.math.BigDecimal;
  * @version 1.0
  */
 @SuppressWarnings({"all"})
-@DubboService(interfaceClass = PlatBaseInfoService.class,version = "0.0.1-SNAPSHOT")
-public class PlatBaseInfoService implements platBaseInfoService {
+@DubboService(interfaceClass = PlatBaseInfoService.class,version = "1.0")
+public class PlatBaseInfoServiceImpl implements PlatBaseInfoService {
     @Resource
     private UserMapper userMapper;
 

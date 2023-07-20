@@ -7,6 +7,6 @@ import com.bjpowernode.pojo.BaseInfo;
  * @version 1.0
  */
 @SuppressWarnings({"all"})
-public interface platBaseInfoService {
+public interface PlatBaseInfoService {
     BaseInfo queryPlatBaseInfo();
 }

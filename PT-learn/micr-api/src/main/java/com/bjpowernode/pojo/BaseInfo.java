@@ -52,4 +52,13 @@ public class BaseInfo implements Serializable {
     public void setRegisterUsers(Integer registerUsers) {
         this.registerUsers = registerUsers;
     }
+
+    @Override
+    public String toString() {
+        return "BaseInfo{" +
+                "historyAvgRate=" + historyAvgRate +
+                ", sumBidMoney=" + sumBidMoney +
+                ", registerUsers=" + registerUsers +
+                '}';
+    }
 }
