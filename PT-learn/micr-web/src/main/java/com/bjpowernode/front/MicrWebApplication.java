@@ -1,4 +1,4 @@
-package com.bjpowernode.micrweb;
+package com.bjpowernode.front;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;

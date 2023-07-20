@@ -154,3 +154,73 @@ Caused by: org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperE
 	at org.apache.curator.framework.imps.DeleteBuilderImpl.forPath(DeleteBuilderImpl.java:34)
 	at org.apache.dubbo.remoting.zookeeper.curator.CuratorZookeeperClient.deletePath(CuratorZookeeperClient.java:150)
 	... 16 more
+2023-07-20 16:39:52,084 [DubboShutdownHook] ERROR org.apache.dubbo.registry.support.FailbackRegistry (FailbackRegistry.java:304) -  [DUBBO] Failed to unregister consumer://192.168.0.109/com.bjpowernode.service.PlatBaseInfoService?application=micr-web&category=consumers&check=false&dubbo=2.0.2&init=false&interface=com.bjpowernode.service.PlatBaseInfoService&metadata-type=remote&methods=queryPlatBaseInfo&pid=76880&qos.enable=false&release=2.7.8&retries=0&revision=1.0&side=consumer&sticky=false&timeout=50000&timestamp=1689841780336&version=1.0, waiting for retry, cause: Failed to unregister consumer://192.168.0.109/com.bjpowernode.service.PlatBaseInfoService?application=micr-web&category=consumers&check=false&dubbo=2.0.2&init=false&interface=com.bjpowernode.service.PlatBaseInfoService&metadata-type=remote&methods=queryPlatBaseInfo&pid=76880&qos.enable=false&release=2.7.8&retries=0&revision=1.0&side=consumer&sticky=false&timeout=50000&timestamp=1689841780336&version=1.0 to zookeeper zookeeper://localhost:2181/org.apache.dubbo.registry.RegistryService?application=micr-web&dubbo=2.0.2&interface=org.apache.dubbo.registry.RegistryService&pid=76880&qos.enable=false&release=2.7.8&timestamp=1689841780349, cause: KeeperErrorCode = Session expired for /dubbo/com.bjpowernode.service.PlatBaseInfoService/consumers/consumer%3A%2F%2F192.168.0.109%2Fcom.bjpowernode.service.PlatBaseInfoService%3Fapplication%3Dmicr-web%26category%3Dconsumers%26check%3Dfalse%26dubbo%3D2.0.2%26init%3Dfalse%26interface%3Dcom.bjpowernode.service.PlatBaseInfoService%26metadata-type%3Dremote%26methods%3DqueryPlatBaseInfo%26pid%3D76880%26qos.enable%3Dfalse%26release%3D2.7.8%26retries%3D0%26revision%3D1.0%26side%3Dconsumer%26sticky%3Dfalse%26timeout%3D50000%26timestamp%3D1689841780336%26version%3D1.0, dubbo version: 2.7.8, current host: 192.168.0.109
+org.apache.dubbo.rpc.RpcException: Failed to unregister consumer://192.168.0.109/com.bjpowernode.service.PlatBaseInfoService?application=micr-web&category=consumers&check=false&dubbo=2.0.2&init=false&interface=com.bjpowernode.service.PlatBaseInfoService&metadata-type=remote&methods=queryPlatBaseInfo&pid=76880&qos.enable=false&release=2.7.8&retries=0&revision=1.0&side=consumer&sticky=false&timeout=50000&timestamp=1689841780336&version=1.0 to zookeeper zookeeper://localhost:2181/org.apache.dubbo.registry.RegistryService?application=micr-web&dubbo=2.0.2&interface=org.apache.dubbo.registry.RegistryService&pid=76880&qos.enable=false&release=2.7.8&timestamp=1689841780349, cause: KeeperErrorCode = Session expired for /dubbo/com.bjpowernode.service.PlatBaseInfoService/consumers/consumer%3A%2F%2F192.168.0.109%2Fcom.bjpowernode.service.PlatBaseInfoService%3Fapplication%3Dmicr-web%26category%3Dconsumers%26check%3Dfalse%26dubbo%3D2.0.2%26init%3Dfalse%26interface%3Dcom.bjpowernode.service.PlatBaseInfoService%26metadata-type%3Dremote%26methods%3DqueryPlatBaseInfo%26pid%3D76880%26qos.enable%3Dfalse%26release%3D2.7.8%26retries%3D0%26revision%3D1.0%26side%3Dconsumer%26sticky%3Dfalse%26timeout%3D50000%26timestamp%3D1689841780336%26version%3D1.0
+	at org.apache.dubbo.registry.zookeeper.ZookeeperRegistry.doUnregister(ZookeeperRegistry.java:140)
+	at org.apache.dubbo.registry.support.FailbackRegistry.unregister(FailbackRegistry.java:289)
+	at org.apache.dubbo.registry.support.AbstractRegistry.destroy(AbstractRegistry.java:473)
+	at org.apache.dubbo.registry.support.FailbackRegistry.destroy(FailbackRegistry.java:439)
+	at org.apache.dubbo.registry.zookeeper.ZookeeperRegistry.destroy(ZookeeperRegistry.java:118)
+	at org.apache.dubbo.registry.support.AbstractRegistryFactory.destroyAll(AbstractRegistryFactory.java:88)
+	at org.apache.dubbo.config.DubboShutdownHook.destroyAll(DubboShutdownHook.java:128)
+	at org.apache.dubbo.config.bootstrap.DubboBootstrap.destroy(DubboBootstrap.java:1253)
+	at org.apache.dubbo.config.bootstrap.DubboBootstrap$1.callback(DubboBootstrap.java:205)
+	at org.apache.dubbo.common.function.ThrowableAction.execute(ThrowableAction.java:46)
+	at org.apache.dubbo.common.lang.ShutdownHookCallbacks.lambda$callback$0(ShutdownHookCallbacks.java:70)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.apache.dubbo.common.lang.ShutdownHookCallbacks.callback(ShutdownHookCallbacks.java:70)
+	at org.apache.dubbo.config.DubboShutdownHook.callback(DubboShutdownHook.java:85)
+	at org.apache.dubbo.config.DubboShutdownHook.run(DubboShutdownHook.java:73)
+Caused by: java.lang.IllegalStateException: KeeperErrorCode = Session expired for /dubbo/com.bjpowernode.service.PlatBaseInfoService/consumers/consumer%3A%2F%2F192.168.0.109%2Fcom.bjpowernode.service.PlatBaseInfoService%3Fapplication%3Dmicr-web%26category%3Dconsumers%26check%3Dfalse%26dubbo%3D2.0.2%26init%3Dfalse%26interface%3Dcom.bjpowernode.service.PlatBaseInfoService%26metadata-type%3Dremote%26methods%3DqueryPlatBaseInfo%26pid%3D76880%26qos.enable%3Dfalse%26release%3D2.7.8%26retries%3D0%26revision%3D1.0%26side%3Dconsumer%26sticky%3Dfalse%26timeout%3D50000%26timestamp%3D1689841780336%26version%3D1.0
+	at org.apache.dubbo.remoting.zookeeper.curator.CuratorZookeeperClient.deletePath(CuratorZookeeperClient.java:153)
+	at org.apache.dubbo.remoting.zookeeper.support.AbstractZookeeperClient.delete(AbstractZookeeperClient.java:67)
+	at org.apache.dubbo.registry.zookeeper.ZookeeperRegistry.doUnregister(ZookeeperRegistry.java:138)
+	... 14 more
+Caused by: org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /dubbo/com.bjpowernode.service.PlatBaseInfoService/consumers/consumer%3A%2F%2F192.168.0.109%2Fcom.bjpowernode.service.PlatBaseInfoService%3Fapplication%3Dmicr-web%26category%3Dconsumers%26check%3Dfalse%26dubbo%3D2.0.2%26init%3Dfalse%26interface%3Dcom.bjpowernode.service.PlatBaseInfoService%26metadata-type%3Dremote%26methods%3DqueryPlatBaseInfo%26pid%3D76880%26qos.enable%3Dfalse%26release%3D2.7.8%26retries%3D0%26revision%3D1.0%26side%3Dconsumer%26sticky%3Dfalse%26timeout%3D50000%26timestamp%3D1689841780336%26version%3D1.0
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:130)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:54)
+	at org.apache.zookeeper.ZooKeeper.delete(ZooKeeper.java:882)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl$5.call(DeleteBuilderImpl.java:274)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl$5.call(DeleteBuilderImpl.java:268)
+	at org.apache.curator.connection.StandardConnectionHandlingPolicy.callWithRetry(StandardConnectionHandlingPolicy.java:64)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:100)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl.pathInForeground(DeleteBuilderImpl.java:265)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl.forPath(DeleteBuilderImpl.java:249)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl.forPath(DeleteBuilderImpl.java:34)
+	at org.apache.dubbo.remoting.zookeeper.curator.CuratorZookeeperClient.deletePath(CuratorZookeeperClient.java:150)
+	... 16 more
+2023-07-20 16:45:56,066 [DubboShutdownHook] ERROR org.apache.dubbo.registry.support.FailbackRegistry (FailbackRegistry.java:304) -  [DUBBO] Failed to unregister consumer://192.168.0.109/com.bjpowernode.service.PlatBaseInfoService?application=micr-web&category=consumers&check=false&dubbo=2.0.2&init=false&interface=com.bjpowernode.service.PlatBaseInfoService&metadata-type=remote&methods=queryPlatBaseInfo&pid=48604&qos.enable=false&release=2.7.8&retries=0&revision=1.0&side=consumer&sticky=false&timeout=50000&timestamp=1689842685451&version=1.0, waiting for retry, cause: Failed to unregister consumer://192.168.0.109/com.bjpowernode.service.PlatBaseInfoService?application=micr-web&category=consumers&check=false&dubbo=2.0.2&init=false&interface=com.bjpowernode.service.PlatBaseInfoService&metadata-type=remote&methods=queryPlatBaseInfo&pid=48604&qos.enable=false&release=2.7.8&retries=0&revision=1.0&side=consumer&sticky=false&timeout=50000&timestamp=1689842685451&version=1.0 to zookeeper zookeeper://localhost:2181/org.apache.dubbo.registry.RegistryService?application=micr-web&dubbo=2.0.2&interface=org.apache.dubbo.registry.RegistryService&pid=48604&qos.enable=false&release=2.7.8&timestamp=1689842685465, cause: KeeperErrorCode = Session expired for /dubbo/com.bjpowernode.service.PlatBaseInfoService/consumers/consumer%3A%2F%2F192.168.0.109%2Fcom.bjpowernode.service.PlatBaseInfoService%3Fapplication%3Dmicr-web%26category%3Dconsumers%26check%3Dfalse%26dubbo%3D2.0.2%26init%3Dfalse%26interface%3Dcom.bjpowernode.service.PlatBaseInfoService%26metadata-type%3Dremote%26methods%3DqueryPlatBaseInfo%26pid%3D48604%26qos.enable%3Dfalse%26release%3D2.7.8%26retries%3D0%26revision%3D1.0%26side%3Dconsumer%26sticky%3Dfalse%26timeout%3D50000%26timestamp%3D1689842685451%26version%3D1.0, dubbo version: 2.7.8, current host: 192.168.0.109
+org.apache.dubbo.rpc.RpcException: Failed to unregister consumer://192.168.0.109/com.bjpowernode.service.PlatBaseInfoService?application=micr-web&category=consumers&check=false&dubbo=2.0.2&init=false&interface=com.bjpowernode.service.PlatBaseInfoService&metadata-type=remote&methods=queryPlatBaseInfo&pid=48604&qos.enable=false&release=2.7.8&retries=0&revision=1.0&side=consumer&sticky=false&timeout=50000&timestamp=1689842685451&version=1.0 to zookeeper zookeeper://localhost:2181/org.apache.dubbo.registry.RegistryService?application=micr-web&dubbo=2.0.2&interface=org.apache.dubbo.registry.RegistryService&pid=48604&qos.enable=false&release=2.7.8&timestamp=1689842685465, cause: KeeperErrorCode = Session expired for /dubbo/com.bjpowernode.service.PlatBaseInfoService/consumers/consumer%3A%2F%2F192.168.0.109%2Fcom.bjpowernode.service.PlatBaseInfoService%3Fapplication%3Dmicr-web%26category%3Dconsumers%26check%3Dfalse%26dubbo%3D2.0.2%26init%3Dfalse%26interface%3Dcom.bjpowernode.service.PlatBaseInfoService%26metadata-type%3Dremote%26methods%3DqueryPlatBaseInfo%26pid%3D48604%26qos.enable%3Dfalse%26release%3D2.7.8%26retries%3D0%26revision%3D1.0%26side%3Dconsumer%26sticky%3Dfalse%26timeout%3D50000%26timestamp%3D1689842685451%26version%3D1.0
+	at org.apache.dubbo.registry.zookeeper.ZookeeperRegistry.doUnregister(ZookeeperRegistry.java:140)
+	at org.apache.dubbo.registry.support.FailbackRegistry.unregister(FailbackRegistry.java:289)
+	at org.apache.dubbo.registry.support.AbstractRegistry.destroy(AbstractRegistry.java:473)
+	at org.apache.dubbo.registry.support.FailbackRegistry.destroy(FailbackRegistry.java:439)
+	at org.apache.dubbo.registry.zookeeper.ZookeeperRegistry.destroy(ZookeeperRegistry.java:118)
+	at org.apache.dubbo.registry.support.AbstractRegistryFactory.destroyAll(AbstractRegistryFactory.java:88)
+	at org.apache.dubbo.config.DubboShutdownHook.destroyAll(DubboShutdownHook.java:128)
+	at org.apache.dubbo.config.bootstrap.DubboBootstrap.destroy(DubboBootstrap.java:1253)
+	at org.apache.dubbo.config.bootstrap.DubboBootstrap$1.callback(DubboBootstrap.java:205)
+	at org.apache.dubbo.common.function.ThrowableAction.execute(ThrowableAction.java:46)
+	at org.apache.dubbo.common.lang.ShutdownHookCallbacks.lambda$callback$0(ShutdownHookCallbacks.java:70)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.apache.dubbo.common.lang.ShutdownHookCallbacks.callback(ShutdownHookCallbacks.java:70)
+	at org.apache.dubbo.config.DubboShutdownHook.callback(DubboShutdownHook.java:85)
+	at org.apache.dubbo.config.DubboShutdownHook.run(DubboShutdownHook.java:73)
+Caused by: java.lang.IllegalStateException: KeeperErrorCode = Session expired for /dubbo/com.bjpowernode.service.PlatBaseInfoService/consumers/consumer%3A%2F%2F192.168.0.109%2Fcom.bjpowernode.service.PlatBaseInfoService%3Fapplication%3Dmicr-web%26category%3Dconsumers%26check%3Dfalse%26dubbo%3D2.0.2%26init%3Dfalse%26interface%3Dcom.bjpowernode.service.PlatBaseInfoService%26metadata-type%3Dremote%26methods%3DqueryPlatBaseInfo%26pid%3D48604%26qos.enable%3Dfalse%26release%3D2.7.8%26retries%3D0%26revision%3D1.0%26side%3Dconsumer%26sticky%3Dfalse%26timeout%3D50000%26timestamp%3D1689842685451%26version%3D1.0
+	at org.apache.dubbo.remoting.zookeeper.curator.CuratorZookeeperClient.deletePath(CuratorZookeeperClient.java:153)
+	at org.apache.dubbo.remoting.zookeeper.support.AbstractZookeeperClient.delete(AbstractZookeeperClient.java:67)
+	at org.apache.dubbo.registry.zookeeper.ZookeeperRegistry.doUnregister(ZookeeperRegistry.java:138)
+	... 14 more
+Caused by: org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /dubbo/com.bjpowernode.service.PlatBaseInfoService/consumers/consumer%3A%2F%2F192.168.0.109%2Fcom.bjpowernode.service.PlatBaseInfoService%3Fapplication%3Dmicr-web%26category%3Dconsumers%26check%3Dfalse%26dubbo%3D2.0.2%26init%3Dfalse%26interface%3Dcom.bjpowernode.service.PlatBaseInfoService%26metadata-type%3Dremote%26methods%3DqueryPlatBaseInfo%26pid%3D48604%26qos.enable%3Dfalse%26release%3D2.7.8%26retries%3D0%26revision%3D1.0%26side%3Dconsumer%26sticky%3Dfalse%26timeout%3D50000%26timestamp%3D1689842685451%26version%3D1.0
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:130)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:54)
+	at org.apache.zookeeper.ZooKeeper.delete(ZooKeeper.java:882)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl$5.call(DeleteBuilderImpl.java:274)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl$5.call(DeleteBuilderImpl.java:268)
+	at org.apache.curator.connection.StandardConnectionHandlingPolicy.callWithRetry(StandardConnectionHandlingPolicy.java:64)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:100)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl.pathInForeground(DeleteBuilderImpl.java:265)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl.forPath(DeleteBuilderImpl.java:249)
+	at org.apache.curator.framework.imps.DeleteBuilderImpl.forPath(DeleteBuilderImpl.java:34)
+	at org.apache.dubbo.remoting.zookeeper.curator.CuratorZookeeperClient.deletePath(CuratorZookeeperClient.java:150)
+	... 16 more

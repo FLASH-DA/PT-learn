@@ -1,5 +1,5 @@
-package com.bjpowernode.micrweb.front.controller;
-import com.bjpowernode.micrweb.front.view.RespResult;
+package com.bjpowernode.front.controller;
+import com.bjpowernode.front.view.RespResult;
 import com.bjpowernode.pojo.BaseInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

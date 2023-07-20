@@ -1,4 +1,4 @@
-package com.bjpowernode.micrweb.front.controller;
+package com.bjpowernode.front.controller;
 
 import com.bjpowernode.service.PlatBaseInfoService;
 import org.apache.dubbo.config.annotation.DubboReference;
