@@ -22,6 +22,7 @@
   <select id="selectSumBidMoney" resultType="java.math.BigDecimal">
     select sum(bid_money) as sumBidMoney from b_bid_info
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from b_bid_info
     where id = #{id,jdbcType=INTEGER}

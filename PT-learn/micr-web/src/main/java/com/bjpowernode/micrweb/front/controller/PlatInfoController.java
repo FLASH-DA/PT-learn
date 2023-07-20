@@ -1,5 +1,6 @@
 package com.bjpowernode.micrweb.front.controller;
 
+import com.bjpowernode.pojo.BaseInfo;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,7 +13,8 @@ public class PlatInfoController extends BaseController {
     /**
      * 平台基本信息
      */
-    public void queryPaltInfo(){
+    public void queryPaltBaseInfo(){
+        BaseInfo baseInfo = platBaseInfoService.queryPlatBaseInfo();
 
     }
 }
