@@ -32,6 +32,16 @@
   <select id="selectAvgRate" resultType="java.math.BigDecimal">
     select round(avg(rate),2) as avgRate from b_loan_info
   </select>
+  <select id="selectByTypeLimit" resultType="com.bjpowernode.model.LoanInfo">
+    select <include refid="Base_Column_List" />
+    from b_product_info
+    where product_type = #{ptype}
+    order by release_time desc
+    limit #{offset},#{rows}
+  </select>
+  <select id="selectCountByType" resultType="java.lang.Integer">
+    select count(id) as nums from b_product_info where product_type = #{ptype}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from b_loan_info
     where id = #{id,jdbcType=INTEGER}

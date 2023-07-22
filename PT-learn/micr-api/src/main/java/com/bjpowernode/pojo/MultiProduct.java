@@ -12,7 +12,7 @@ import java.util.List;
 @SuppressWarnings({"all"})
 public class MultiProduct implements Serializable {
     private List<LoanInfo> xinShouBao;
-    private List<LoanInfo> youXun;
+    private List<LoanInfo> youXuan;
     private List<LoanInfo> sanBiao;
 
     public List<LoanInfo> getXinShouBao() {
@@ -23,12 +23,12 @@ public class MultiProduct implements Serializable {
         this.xinShouBao = xinShouBao;
     }
 
-    public List<LoanInfo> getYouXun() {
-        return youXun;
+    public List<LoanInfo> getYouXuan() {
+        return youXuan;
     }
 
-    public void setYouXun(List<LoanInfo> youXun) {
-        this.youXun = youXun;
+    public void setYouXuan(List<LoanInfo> youXuan) {
+        this.youXuan = youXuan;
     }
 
     public List<LoanInfo> getSanBiao() {

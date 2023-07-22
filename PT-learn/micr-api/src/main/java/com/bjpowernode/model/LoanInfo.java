@@ -1,9 +1,10 @@
 package com.bjpowernode.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class LoanInfo {
+public class LoanInfo implements Serializable {
     private Integer id;
 
     private String productName;

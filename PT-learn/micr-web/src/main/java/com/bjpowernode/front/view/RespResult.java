@@ -1,5 +1,7 @@
 package com.bjpowernode.front.view;
 
+import com.bjpowernode.common.enums.RCode;
+
 /**
  * Package:com.bjpowernode.front.view
  * Date:2022/3/1 16:30
@@ -15,7 +17,18 @@ public class RespResult {
     private Object data;
 
 
-
+    //表示成功的RespResult对象
+//    public static RespResult ok(){
+//        RespResult result = new RespResult();
+//        result.setRCode(RCode.SUCC);
+//        return result;
+//    }
+    //表示失败的RespResult对象
+//    public static RespResult fail(){
+//        RespResult result = new RespResult();
+//        result.setRCode(RCode.UNKOWN);
+//        return result;
+//    }
 
     public int getCode() {
         return code;
