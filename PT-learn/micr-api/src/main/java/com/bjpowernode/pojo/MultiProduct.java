@@ -10,7 +10,7 @@ import java.util.List;
  * @version 1.0
  */
 @SuppressWarnings({"all"})
-public class MultProduct implements Serializable {
+public class MultiProduct implements Serializable {
     private List<LoanInfo> xinShouBao;
     private List<LoanInfo> youXun;
     private List<LoanInfo> sanBiao;
