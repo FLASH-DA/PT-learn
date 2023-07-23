@@ -29,7 +29,7 @@
 <!--        <dependency>-->
 <!--            <groupId>com.bjpowernode</groupId>-->
 <!--            <artifactId>micro-common</artifactId>-->
-<!--            <version>1.0.0</version>-->
+<!--            <version>1.0.0</version>    -->
 <!--        </dependency>-->
 
         <!--dubbo公共项目-->

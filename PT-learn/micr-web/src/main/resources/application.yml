@@ -8,12 +8,11 @@ spring:
 #端口号
 server:
   port: 8000
-  servlet:
-    context-path: /api
-    encoding:
-      enabled: true
-      charset: utf-8
-      force: true
+  context-path: /api
+  encoding:
+    enabled: true
+    charset: utf-8
+    force: true
 
 #dubbo配置
 dubbo:
@@ -25,4 +24,5 @@ dubbo:
     check: false
     timeout: 50000
     retries: 0
+
 

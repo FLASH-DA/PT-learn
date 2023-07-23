@@ -14,6 +14,6 @@ public class BaseController {
 
     @DubboReference(interfaceClass = PlatBaseInfoService.class, version = "1.0")
     protected PlatBaseInfoService platBaseInfoService;
-    @DubboReference(interfaceClass = PlatBaseInfoService.class, version = "1.0")
+    @DubboReference(interfaceClass = ProductInfoService.class, version = "1.0")
     protected ProductInfoService productInfoService;
 }

@@ -6,6 +6,8 @@ import com.bjpowernode.model.LoanInfo;
 import com.bjpowernode.pojo.MultiProduct;
 import com.bjpowernode.service.ProductInfoService;
 import com.bjpowernode.common.utils.CommonUtils;
+import org.apache.dubbo.config.annotation.DubboService;
+
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
  * @version 1.0
  */
 @SuppressWarnings({"all"})
+@DubboService(interfaceClass = ProductInfoService.class,version = "1.0")
 public class ProductInfoServiceImpl implements ProductInfoService {
     @Resource
     private LoanInfoMapper loanInfoMapper;
@@ -49,14 +52,16 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         //查询新手宝
         List<LoanInfo> xinShouBaoList  = loanInfoMapper.selectByTypeLimit(
                 YLBConstant.PRODUCT_TYPE_XINSHOUBAO,0,1);
+        System.out.println(xinShouBaoList);
         //查询优选
         List<LoanInfo> youXuanList = loanInfoMapper.selectByTypeLimit(
                 YLBConstant.PRODUCT_TYPE_YOUXUAN,0,3 );
+        System.out.println(youXuanList);
 
         //散标
         List<LoanInfo> sanBiaoList = loanInfoMapper.selectByTypeLimit(
                 YLBConstant.PRODUCT_TYPE_SANBIAO,0,3 );
-
+        System.out.println(sanBiaoList);
         result.setXinShouBao(xinShouBaoList);
         result.setYouXuan(youXuanList);
         result.setSanBiao(sanBiaoList);
