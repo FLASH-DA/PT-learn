@@ -4,6 +4,9 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  redis:
+    host: 172.25.131.7
+    port: 6379
 
 #端口号
 server:

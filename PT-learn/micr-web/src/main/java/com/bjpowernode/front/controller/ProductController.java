@@ -35,7 +35,7 @@ public class ProductController extends BaseController {
         return result;
     }
 
-    @GetMapping("/product/list")
+    @GetMapping("product/list")
     public RespResult queryProductByType(@RequestParam("ptype") Integer pType,
                                          @RequestParam(value = "pageNo",required = false,defaultValue = "1") Integer pageNo,
                                          @RequestParam(value = "pageSize",required = false,defaultValue = "9") Integer pageSize){
