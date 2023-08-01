@@ -35,7 +35,8 @@ public class ProductController extends BaseController {
         return result;
     }
 
-    @GetMapping("product/list")
+    /*按产品类型分页查询*/
+    @GetMapping("/product/list")
     public RespResult queryProductByType(@RequestParam("ptype") Integer pType,
                                          @RequestParam(value = "pageNo",required = false,defaultValue = "1") Integer pageNo,
                                          @RequestParam(value = "pageSize",required = false,defaultValue = "9") Integer pageSize){
