@@ -3,6 +3,7 @@ import com.bjpowernode.front.view.RespResult;
 import com.bjpowernode.pojo.BaseInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0
  */
 @SuppressWarnings({"all"})
+@CrossOrigin
 @Api(tags = "平台信息功能")
 @RestController
 @RequestMapping("/v1")

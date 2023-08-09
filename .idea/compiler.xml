@@ -13,15 +13,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Interceptor_test" />
         <module name="micr-api" />
-        <module name="ajax-demo" />
         <module name="micr-web" />
         <module name="micr-dataservice" />
         <module name="demo" />
         <module name="micr-common" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ajax-demo" target="8" />
+      <module name="Interceptor_test" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

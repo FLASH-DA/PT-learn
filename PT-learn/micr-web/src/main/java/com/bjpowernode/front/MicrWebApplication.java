@@ -11,7 +11,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableDubbo
 @SpringBootApplication
 public class MicrWebApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(MicrWebApplication.class, args);
     }

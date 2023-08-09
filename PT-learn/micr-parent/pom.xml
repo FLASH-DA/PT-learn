@@ -18,7 +18,6 @@
         <module>../micr-dataservice</module>
         <module>../micr-web</module>
         <module>../micr-common</module>
-        <module>../micr-common</module>
     </modules>
 
     <properties>
